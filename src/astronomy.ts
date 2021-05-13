@@ -4,7 +4,7 @@ export type Coordinates = [latitude: number, longitude: number, altitude?: numbe
 
 export function getJulianDay(date: Date): number {
 	let year = date.getFullYear();
-	let month = date.getMonth();
+	let month = date.getMonth() + 1;
 	const day = date.getDate();
 
 	if (month < 3) {

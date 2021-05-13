@@ -112,7 +112,7 @@ export const enum HightLatMethods {
 	 * Fajr and Isha in this method are assumed to be at mid-night during the abnormal periods.*
 	 * http://praytimes.org/calculation#Higher_Latitudes
 	 */
-	NightMiddle = 'nightMiddle',
+	NightMiddle = 'NightMiddle',
 	/*
 	 * Angle-Based Method
 	 *
@@ -124,7 +124,7 @@ export const enum HightLatMethods {
 	 * Time for Fajr is calculated similarly.*
 	 * http://praytimes.org/calculation#Higher_Latitudes
 	 */
-	AngleBased = 'angleBased',
+	AngleBased = 'AngleBased',
 	/**
 	 * One-Seventh of the Night
 	 *
@@ -132,7 +132,7 @@ export const enum HightLatMethods {
 	 * Isha begins after the first one-seventh part, and Fajr is at the beginning of the seventh part.*
 	 * http://praytimes.org/calculation#Higher_Latitudes
 	 */
-	OneSeventh = 'oneSeventh',
+	OneSeventh = 'OneSeventh',
 }
 
 /**
@@ -283,7 +283,7 @@ export class PrayerManager {
 	 * @param method The calculation method to use
 	 * @param hightLatMethod The high latitudes method to use
 	 */
-	public constructor(method: CalculationMethod, public hightLatMethod?: HightLatMethods) {
+	public constructor(method: CalculationMethod, public hightLatMethod?: keyof typeof HightLatMethods) {
 		this.setCalculationMethod(method);
 	}
 

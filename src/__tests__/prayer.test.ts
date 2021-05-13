@@ -5,7 +5,7 @@ describe(PrayerManager.prototype.getTimes, () => {
 	it('should compute the right times', () => {
 		const prayerManager = new PrayerManager(getCalculationMethod('MWL'));
 
-		const aDate = new Date(2021, 4, 12);
+		const aDate = new Date(2021, 3, 12);
 		const aHouse: Coordinates = [38.897_676_3, -77.036_529, 18];
 
 		expect(prayerManager.getTimes(aDate, aHouse)).toStrictEqual({
