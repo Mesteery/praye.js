@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.3.1](https://www.github.com/Mesteery/praye.js/compare/v0.3.0...v0.3.1) (2022-04-17)
+
+
+### Bug Fixes
+
+* **pkg:** remove useless node engine limitation ([ce5e8b9](https://www.github.com/Mesteery/praye.js/commit/ce5e8b996e292c090ba0c3e7b72fbe90a8683046))
+
 ## [0.3.0](https://www.github.com/Mesteery/praye.js/compare/v0.2.0...v0.3.0) (2022-04-17)
 
 
