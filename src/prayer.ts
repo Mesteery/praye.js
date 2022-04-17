@@ -192,7 +192,7 @@ export function createCalculationMethod(method: CalculationMethod): Required<Cal
 }
 
 /**
- * Get complete calculation method
+ * Get calculation method
  *
  *
  * # Example
@@ -206,34 +206,32 @@ export function createCalculationMethod(method: CalculationMethod): Required<Cal
  *
  * @param method The calculation method
  * @param isRamadan if it's in the ramadan period (only for Makkah's method), default `false`
- * @returns complete calculation method
+ * @returns calculation method
  */
 export function getCalculationMethod(
 	method: keyof typeof CalculationMethods,
 	isRamadan = false,
-): Required<CalculationMethod> {
-	return createCalculationMethod(
-		{
-			[CalculationMethods.MWL]: { fajr: 18, isha: { type: 'angle', value: 17 } },
-			[CalculationMethods.ISNA]: { fajr: 15, isha: { type: 'angle', value: 15 } },
-			[CalculationMethods.Egypt]: { fajr: 19.5, isha: { type: 'angle', value: 17.5 } },
-			[CalculationMethods.Makkah]: { fajr: 19.5, isha: { type: 'minute', value: isRamadan ? 120 : 90 } },
-			[CalculationMethods.Karachi]: { fajr: 18, isha: { type: 'angle', value: 18 } },
-			[CalculationMethods.Tehran]: {
-				fajr: 17.7,
-				maghrib: { type: 'angle', value: 4.5 },
-				isha: { type: 'angle', value: 14 },
-				midnight: MidnightMethod.Jafari,
-			},
-			[CalculationMethods.Jafari]: {
-				fajr: 16,
-				maghrib: { type: 'angle', value: 4 },
-				isha: { type: 'angle', value: 14 },
-				midnight: MidnightMethod.Jafari,
-			},
-			[CalculationMethods.MF]: { fajr: 12, isha: { type: 'angle', value: 12 } },
-		}[method] as CalculationMethod,
-	);
+): CalculationMethod | undefined {
+	return {
+		[CalculationMethods.MWL]: { fajr: 18, isha: { type: 'angle', value: 17 } },
+		[CalculationMethods.ISNA]: { fajr: 15, isha: { type: 'angle', value: 15 } },
+		[CalculationMethods.Egypt]: { fajr: 19.5, isha: { type: 'angle', value: 17.5 } },
+		[CalculationMethods.Makkah]: { fajr: 19.5, isha: { type: 'minute', value: isRamadan ? 120 : 90 } },
+		[CalculationMethods.Karachi]: { fajr: 18, isha: { type: 'angle', value: 18 } },
+		[CalculationMethods.Tehran]: {
+			fajr: 17.7,
+			maghrib: { type: 'angle', value: 4.5 },
+			isha: { type: 'angle', value: 14 },
+			midnight: MidnightMethod.Jafari,
+		},
+		[CalculationMethods.Jafari]: {
+			fajr: 16,
+			maghrib: { type: 'angle', value: 4 },
+			isha: { type: 'angle', value: 14 },
+			midnight: MidnightMethod.Jafari,
+		},
+		[CalculationMethods.MF]: { fajr: 12, isha: { type: 'angle', value: 12 } },
+	}[method] as CalculationMethod | undefined;
 }
 
 function timeDiff(time1: number, time2: number): number {
