@@ -1,7 +1,7 @@
 {
   "name": "praye.js",
   "description": "Lightweight and highly accurate low-level library for calculating (Islamic) prayer times.",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "main": "build/index.js",
   "types": "build/index.d.ts",
   "prettier": "@typescord/prettier-config",
